@@ -1,4 +1,4 @@
-package com.reservation_system.domain;
+package com.reservation_system.model;
 
 import java.time.OffsetDateTime;
 import java.util.Set;
