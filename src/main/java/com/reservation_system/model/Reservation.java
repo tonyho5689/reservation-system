@@ -36,13 +36,16 @@ public class Reservation {
     )
     private Long id;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(nullable = false)
     private LocalDate reservationDate;
 
-    @Column(nullable = false)
+    @DateTimeFormat(pattern = "HH:mm")
+    @Column
     private LocalTime startTime;
 
-    @Column(nullable = false)
+    @DateTimeFormat(pattern = "HH:mm")
+    @Column
     private LocalTime endTime;
 
     @ManyToOne(fetch = FetchType.LAZY)
