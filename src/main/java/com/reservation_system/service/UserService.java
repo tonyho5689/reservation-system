@@ -40,4 +40,7 @@ public class UserService {
     public void delete(final Long id) {
         userRepository.deleteById(id);
     }
+
+    public User getUserByUsername(String name) {
+    }
 }
