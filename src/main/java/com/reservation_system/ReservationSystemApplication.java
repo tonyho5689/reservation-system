@@ -14,13 +14,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,7 +40,7 @@ public class ReservationSystemApplication {
             CapacityRepository capacityRepository) {
         return (args) -> {
             userRepository.save(
-                    new User("Tony", "tonyho5689", bCryptPasswordEncoder().encode("12345")));
+                    new User("Tony Ho", "tonyho5689", bCryptPasswordEncoder().encode("12345")));
 
             for (AmenityType amenityType : initialCapacities.keySet()) {
                 capacityRepository.save(new Capacity(amenityType, initialCapacities.get(amenityType)));
@@ -59,5 +52,5 @@ public class ReservationSystemApplication {
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 }
+

@@ -1,6 +1,7 @@
 package com.reservation_system.service;
 
 import java.util.List;
+
 import com.reservation_system.model.User;
 import com.reservation_system.repos.UserRepository;
 import org.springframework.http.HttpStatus;
@@ -42,5 +43,6 @@ public class UserService {
     }
 
     public User getUserByUsername(String name) {
+        return userRepository.findUserByUsername(name);
     }
 }
